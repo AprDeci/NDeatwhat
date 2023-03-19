@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333333;
+            overflow: hidden;
+        }
+        .contain{
+            position: absolute;
+            width: 200px;
+            height: 58px;
+            background-color: rgb(250, 121, 121);  
+            z-index: 99;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            line-height: 58px;
+            user-select: none;
+            font-size: large;
+        }
+        .box{
+            position: absolute;
+            width: 125px;
+            height: 50px;
+            background-color: aquamarine;
+            z-index: 99;
+            top: calc(50% + 75px);
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            user-select: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="back"></div>
+    <div class="contain">今天吃什么</div>
+    <div class="box" onclick="stop = !stop">吃什么</div>
+</body>
+<script>
+var stop = true
+var box = document.querySelector('.box')
+var contain = document.querySelector('.contain')
+var back = document.querySelector('.back')
+var foods = "湘菜大碗饭 木桶饭 摇滚炒鸡 元气煲饭 新疆干脆面 朝鲜冷面 二餐石锅 山西油泼面"
+var food = foods.split(' ')
+var tests=[]
+var colors=['#99CCFF','#CCFF99','#FFFFCC','#FF99CC','#009933','#FFCC00']
+
+function draw(){ 
+    back.innerHTML=''
+    if(stop){
+        box.innerHTML = '吃什么'
+    }else{
+        contain.innerHTML= food[parseInt(Math.random()*food.length)]
+        box.innerHTML = '选中!'
+}
+
+for(var i = 0;i<tests.length;i++){
+            test = tests[i]
+            var span = document.createElement('span')
+            span.style.position = 'absolute'
+            span.style.left = test.sx + 'px'
+            span.style.top = test.sy + 'px'
+            span.style.color = test.color
+            span.style.fontSize = test.size+ 'px'
+            span.style.opacity = 1 - test.age/100
+            test.sy -= test.vx 
+            test.age++;
+            if(test.age>100){
+                tests.splice(i,1)
+            }
+            if(stop){
+                span.innerHTML = contain.innerHTML
+            }
+            else{
+                span.innerHTML = test.str
+            }
+            back.appendChild(span)
+        }
+if(tests.length<50){
+            tests.push({
+                str:food[parseInt(Math.random()*food.length)],
+                sx:Math.random()*window.innerWidth,
+                sy:Math.random()*window.innerHeight,
+                color:colors[parseInt(Math.random()*colors.length)],
+                size:Math.random()*20+20,
+                age:Math.random()*100,
+                vx:Math.random()*5
+            })
+           }
+        }
+
+setInterval(draw,20)
+</script>
+</html>
