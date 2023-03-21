@@ -12,12 +12,17 @@
             margin: 0;
         }
         body{
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #333333;
             overflow: hidden;
+            background-attachment: fixed;
+            background-position: center center;
         }
         .contain{
             position: absolute;
@@ -31,6 +36,7 @@
             line-height: 58px;
             user-select: none;
             font-size: large;
+            box-shadow: 3px 3px 4px black;
         }
         .box{
             position: absolute;
@@ -46,12 +52,23 @@
             user-select: none;
             cursor: pointer;
         }
+        .footer{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 700px;
+            left:1000px ;
+            z-index:99
+        }
     </style>
 </head>
 <body>
     <div class="back"></div>
     <div class="contain">今天吃什么</div>
     <div class="box" onclick="stop = !stop">吃什么</div>
+    <div class="footer">
+        <a href="https://www.aprdec.top"><img src="blog.png" alt="blog"></a>
+    </div>
 </body>
 <script>
 var stop = true
@@ -62,7 +79,7 @@ var foods = "湘菜大碗饭 木桶饭 摇滚炒鸡 元气煲饭 新疆干脆面
 var food = foods.split(' ')
 var tests=[]
 var colors=['#99CCFF','#CCFF99','#FFFFCC','#FF99CC','#009933','#FFCC00']
-
+var eattimess = 0;
 function draw(){ 
     back.innerHTML=''
     if(stop){
@@ -106,7 +123,8 @@ if(tests.length<50){
             })
            }
         }
-
+    
+    
 setInterval(draw,20)
 </script>
 </html>
