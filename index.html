@@ -7,9 +7,15 @@
     <title>农带今天吃什么</title>
     <link rel="shortcut icon" href="https://luchetuchuang.oss-cn-beijing.aliyuncs.com/img/eatwahtlogo.jpg">
     <style>
+        @font-face {
+            font-family:"SmileySans-Oblique";
+            src: url("SmileySans-Oblique.ttf.woff2");
+        }
         *{
             padding: 0;
             margin: 0;
+            font-family: "SmileySans-Oblique";
+            
         }
         body{
             display: flex;
@@ -29,7 +35,7 @@
             position: absolute;
             width: 200px;
             height: 58px;
-            background-color: rgb(250, 121, 121);  
+            background-color: #fa7979;  
             z-index: 99;
             border-radius: 15px;
             color: white;
@@ -37,13 +43,13 @@
             line-height: 58px;
             user-select: none;
             font-size: large;
-            box-shadow: 4px 2px 10px black;
+            box-shadow: 0px 0px 10px #fa7979;
         }
         .box{
             position: absolute;
             width: 125px;
             height: 50px;
-            background-color: aquamarine;
+            background-color: #7fffd4;
             z-index: 99;
             top: calc(50% + 75px);
             border-radius: 15px;
@@ -52,7 +58,16 @@
             line-height: 50px;
             user-select: none;
             cursor: pointer;
-            box-shadow: 4px 2px 10px black;
+            box-shadow: 0px 0px 10px #7fffd4;
+           
+        }
+        .box:hover{
+            box-shadow: 0px 0px 20px #7fffd4;
+        }
+        .box:active{
+            background: none;
+            color: #7fffd4;
+            border: 2px solid #7fffd4;
         }
         .saying{
             display:none;
