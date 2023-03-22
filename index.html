@@ -151,12 +151,11 @@ if(tests.length<50){
             tests.push({
                 str:food[parseInt(Math.random()*food.length)],
                 //sx:Math.random()*window.innerWidth,
-                sx:Math.random()*document.body.clientWidth,
+                sx:Math.random()*window.screen.availWidth,
                 //sy:Math.random()*window.innerHeight,
-                sy:Math.random()*document.body.clientHeight,
+                sy:Math.random()*document.body.offsetHeight,
                 color:colors[parseInt(Math.random()*colors.length)],
-                //size:Math.random()*20+20,
-                size:20,
+                size:Math.random()*20+15,               
                 age:Math.random()*100,
                 vx:Math.random()*5
             })
