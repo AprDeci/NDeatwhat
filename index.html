@@ -12,14 +12,14 @@
             margin: 0;
         }
         body{
-            background-image: url("background.jpg");
+            background-image: url("background.jpggg");
             background-repeat: no-repeat;
             background-size: cover;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #333333;
+            background-color: #f8f8f4;
             overflow: hidden;
             background-attachment: fixed;
             background-position: center center;
@@ -55,8 +55,8 @@
         .footer{
             width: 50px;
             height: 50px;
-            position: absolute;
-            top: 700px;
+            position: fixed;
+            top: 730px;
             left:1000px ;
             z-index:99
         }
@@ -67,7 +67,7 @@
     <div class="contain">今天吃什么</div>
     <div class="box" onclick="stop = !stop">吃什么</div>
     <div class="footer">
-        <a href="https://www.aprdec.top"><img src="blog.png" alt="blog"></a>
+        <a href="https://www.aprdec.top"><img style="width:30px;" src="blog.png" alt="blog"></a>
     </div>
 </body>
 <script>
@@ -75,7 +75,7 @@ var stop = true
 var box = document.querySelector('.box')
 var contain = document.querySelector('.contain')
 var back = document.querySelector('.back')
-var foods = "湘菜大碗饭 木桶饭 摇滚炒鸡 元气煲饭 新疆干脆面 朝鲜冷面 二餐石锅 山西油泼面 重庆小面 麦多馅饼 胡辣汤"
+var foods = "湘菜大碗饭 木桶饭 摇滚炒鸡 元气煲饭 新疆干脆面 朝鲜冷面 二餐石锅 山西油泼面 重庆小面 麦多馅饼 胡辣汤 肉夹馍 炸鸡排 爱尚麻辣烫"
 var food = foods.split(' ')
 var tests=[]
 var colors=['#99CCFF','#CCFF99','#FFFFCC','#FF99CC','#009933','#FFCC00']
