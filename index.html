@@ -12,6 +12,7 @@
             margin: 0;
         }
         body{
+            display: flex;
             background-image: url("background.jpggg");
             background-repeat: no-repeat;
             background-size: cover;
@@ -36,7 +37,7 @@
             line-height: 58px;
             user-select: none;
             font-size: large;
-            box-shadow: 3px 3px 4px black;
+            box-shadow: 4px 2px 10px black;
         }
         .box{
             position: absolute;
@@ -51,19 +52,27 @@
             line-height: 50px;
             user-select: none;
             cursor: pointer;
+            box-shadow: 4px 2px 10px black;
         }
         .saying{
+            display:none;
             position: absolute;
             top: calc(50% + 150px);
-        }
+        }   
         .footer{
-            width: 50px;
-            height: 50px;
+            display: flex;
             position: absolute;
-            top: 730px;
-            left:1000px ;
-            z-index:99
+            top: calc(90% + 20px);
+            right: calc(10%);
         }
+        .footer a{
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .footer a img{
+            vertical-align: bottom;
+        }
+
     </style>
 </head>
 <body>
@@ -71,9 +80,10 @@
     <div class="contain">今天吃什么</div>
     <div class="box" onclick="stop = !stop">吃什么</div>
     <div class="saying"><p>经常更新,请及时清理浏览器缓存</p>
-    <p style="text-align: center;">author:宗斌de爸爸</p></div>
+    <p style="text-align: center;">author:宗斌de爸</p></div>
     <div class="footer">
-        <a href="https://www.aprdec.top"><img style="width:30px;" src="blog.png" alt="blog"></a>
+        <a target="_blank" href="https://www.aprdec.top"><img style="width:30px;" src="./img/blog.png" alt="blog">博客</a>
+        <a target="_blank" href="https://github.com/q1263868407/NDeatwhat/tree/main"><img style="width:30px" src="./img/github.png">项目主页</a>
     </div>
 </body>
 <script>
