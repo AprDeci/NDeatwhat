@@ -131,6 +131,7 @@ for(var i = 0;i<tests.length;i++){
             span.style.left = test.sx + 'px'
             span.style.top = test.sy + 'px'
             span.style.color = test.color
+           // span.style.fontSize = test.size+ 'px'
             span.style.fontSize = test.size+ 'px'
             span.style.opacity = 1 - test.age/100
             test.sy -= test.vx 
@@ -149,10 +150,13 @@ for(var i = 0;i<tests.length;i++){
 if(tests.length<50){
             tests.push({
                 str:food[parseInt(Math.random()*food.length)],
-                sx:Math.random()*window.innerWidth,
-                sy:Math.random()*window.innerHeight,
+                //sx:Math.random()*window.innerWidth,
+                sx:Math.random()*document.body.clientWidth,
+                //sy:Math.random()*window.innerHeight,
+                sy:Math.random()*document.body.clientHeight,
                 color:colors[parseInt(Math.random()*colors.length)],
-                size:Math.random()*20+20,
+                //size:Math.random()*20+20,
+                size:20,
                 age:Math.random()*100,
                 vx:Math.random()*5
             })
