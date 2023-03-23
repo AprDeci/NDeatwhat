@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "smile"; 
+    src: url("SmileySans-Oblique.ttf.woff2") format("woff2");
+    
+    
+  }
+          *{
+              font-family: 'smile';
+              padding: 0;
+              margin: 0;
+              
+          }
+          body{
+             
+              display: flex;
+              background-image: url("background.jpggg");
+              background-repeat: no-repeat;
+              background-size: cover;
+              min-height: 100vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #f8f8f4;
+              overflow: hidden;
+              background-attachment: fixed;
+              background-position: center center;
+          }
+          .contain{
+              position: absolute;
+              width: 200px;
+              height: 58px;
+              background-color: #fa7979;  
+              z-index: 99;
+              border-radius: 15px;
+              color: white;
+              text-align: center;
+              line-height: 58px;
+              user-select: none;
+              font-size: large;
+              box-shadow: 0px 0px 10px #fa7979;
+          }
+          .box{
+              position: absolute;
+              width: 125px;
+              height: 50px;
+              background-color: #7fffd4;
+              z-index: 99;
+              top: calc(50% + 75px);
+              border-radius: 15px;
+              color: white;
+              text-align: center;
+              line-height: 50px;
+              user-select: none;
+              cursor: pointer;
+              box-shadow: 0px 0px 10px #7fffd4;
+             
+          }
+          .box:hover{
+              box-shadow: 0px 0px 20px #7fffd4;
+          }
+          .box:active{
+              background: none;
+              color: #7fffd4;
+              border: 2px solid #7fffd4;
+          }
+          .saying{
+              display:none;
+              position: absolute;
+              top: calc(50% + 150px);
+          }   
+          .footer{
+              display: flex;
+              position: absolute;
+              top: calc(90% + 20px);
+              right: calc(10%);
+          }
+          .footer a{
+              text-decoration: none;
+              margin-left: 10px;
+              color: gray;
+          }
+          .footer a img{
+              vertical-align: bottom;
+          }
+  

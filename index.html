@@ -1,98 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+        <!--
+        大型相亲版块:(有需要者联系作者)
+        -------------------------------------------------
+        |         姓名:李宗斌 性别:男                   |
+        |         VX:LZB19838088987                    |
+        | 长相帅气,英俊可人,纯情牡丹,欢迎各路小姐姐骚扰   |
+        |______________________________________________|
+        
+    -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aprdec">
     <title>农带今天吃什么</title>
     <link rel="shortcut icon" href="https://luchetuchuang.oss-cn-beijing.aliyuncs.com/img/eatwahtlogo.jpg">
-    <style>
-@font-face {
-  font-family: "smile"; 
-  src: url("SmileySans-Oblique.ttf.woff2") format("woff2");
-  
-  
-}
-        *{
-            font-family: 'smile';
-            padding: 0;
-            margin: 0;
-            
-        }
-        body{
-           
-            display: flex;
-            background-image: url("background.jpggg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f8f8f4;
-            overflow: hidden;
-            background-attachment: fixed;
-            background-position: center center;
-        }
-        .contain{
-            position: absolute;
-            width: 200px;
-            height: 58px;
-            background-color: #fa7979;  
-            z-index: 99;
-            border-radius: 15px;
-            color: white;
-            text-align: center;
-            line-height: 58px;
-            user-select: none;
-            font-size: large;
-            box-shadow: 0px 0px 10px #fa7979;
-        }
-        .box{
-            position: absolute;
-            width: 125px;
-            height: 50px;
-            background-color: #7fffd4;
-            z-index: 99;
-            top: calc(50% + 75px);
-            border-radius: 15px;
-            color: white;
-            text-align: center;
-            line-height: 50px;
-            user-select: none;
-            cursor: pointer;
-            box-shadow: 0px 0px 10px #7fffd4;
-           
-        }
-        .box:hover{
-            box-shadow: 0px 0px 20px #7fffd4;
-        }
-        .box:active{
-            background: none;
-            color: #7fffd4;
-            border: 2px solid #7fffd4;
-        }
-        .saying{
-            display:none;
-            position: absolute;
-            top: calc(50% + 150px);
-        }   
-        .footer{
-            display: flex;
-            position: absolute;
-            top: calc(90% + 20px);
-            right: calc(10%);
-        }
-        .footer a{
-            text-decoration: none;
-            margin-left: 10px;
-            color: gray;
-        }
-        .footer a img{
-            vertical-align: bottom;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="back"></div>
@@ -105,64 +29,5 @@
         <a target="_blank" href="https://github.com/q1263868407/NDeatwhat/tree/main"><img style="width:30px" src="./img/github.png">项目主页</a>
     </div>
 </body>
-<script>
-var stop = true
-var box = document.querySelector('.box')
-var contain = document.querySelector('.contain')
-var back = document.querySelector('.back')
-var foods = "湘菜大碗饭 木桶饭 摇滚炒鸡 元气煲饭 新疆干脆面 朝鲜冷面 二餐石锅 山西油泼面 重庆小面 麦多馅饼 胡辣汤 肉夹馍 炸鸡排 爱尚麻辣烫"
-var food = foods.split(' ')
-var tests=[]
-var colors=['#99CCFF','#CCFF99','#FFFFCC','#FF99CC','#009933','#FFCC00']
-var eattimess = 0;
-function draw(){ 
-    back.innerHTML=''
-    if(stop){
-        box.innerHTML = '吃什么'
-    }else{
-        contain.innerHTML= food[parseInt(Math.random()*food.length)]
-        box.innerHTML = '选中!'
-}
-
-for(var i = 0;i<tests.length;i++){
-            test = tests[i]
-            var span = document.createElement('span')
-            span.style.position = 'absolute'
-            span.style.left = test.sx + 'px'
-            span.style.top = test.sy + 'px'
-            span.style.color = test.color
-           // span.style.fontSize = test.size+ 'px'
-            span.style.fontSize = test.size+ 'px'
-            span.style.opacity = 1 - test.age/100
-            test.sy -= test.vx 
-            test.age++;
-            if(test.age>100){
-                tests.splice(i,1)
-            }
-            if(stop){
-                span.innerHTML = contain.innerHTML
-            }
-            else{
-                span.innerHTML = test.str
-            }
-            back.appendChild(span)
-        }
-if(tests.length<50){
-            tests.push({
-                str:food[parseInt(Math.random()*food.length)],
-                //sx:Math.random()*window.innerWidth,
-                sx:Math.random()*window.screen.availWidth,
-                //sy:Math.random()*window.innerHeight,
-                sy:Math.random()*document.body.offsetHeight,
-                color:colors[parseInt(Math.random()*colors.length)],
-                size:Math.random()*20+15,               
-                age:Math.random()*100,
-                vx:Math.random()*5
-            })
-           }
-        }
-    
-    
-setInterval(draw,20)
-</script>
+<script src="./script.js"></script>
 </html>
