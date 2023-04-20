@@ -1,190 +1,195 @@
 @font-face {
-    font-family: "smile"; 
-    src: url("SmileySans-Oblique.ttf.woff2") format("woff2");
-    
-    
-  }
-          *{
-              font-family: 'smile';
-              padding: 0;
-              margin: 0;
-              
-          }
-          body{
-             
-              display: flex;
-              background-image: url("background.jpggg");
-              background-repeat: no-repeat;
-              background-size: cover;
-              min-height: 100vh;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              background-color: #f8f8f4;
-              overflow: hidden;
-              background-attachment: fixed;
-              background-position: center center;
-          }
-          .contain{
-              position: absolute;
-              width: 200px;
-              height: 58px;
-              background-color: #fa7979;  
-              z-index: 99;
-              border-radius: 15px;
-              color: white;
-              text-align: center;
-              line-height: 58px;
-              user-select: none;
-              font-size: large;
-              box-shadow: 0px 0px 10px rgb(250, 121, 121);
-          }
-          .box{
-              position: absolute;
-              width: 125px;
-              height: 50px;
-              background-color: #7fffd4;
-              z-index: 99;
-              top: calc(50% + 75px);
-              border-radius: 15px;
-              color: white;
-              text-align: center;
-              line-height: 50px;
-              user-select: none;
-              cursor: pointer;
-              box-shadow: 0px 0px 10px #7fffd4;
-             
-          }
-          .box:hover{
-              box-shadow: 0px 0px 20px #7fffd4;
-          }
-          .box:active{
-              background: none;
-              color: #7fffd4;
-              border: 2px solid #7fffd4;
-          }
-          .saying{
-              display:none;
-              position: absolute;
-              top: calc(50% + 150px);
-          }   
-          .footer{
-              display: flex;
-              position: absolute;
-              top: calc(90% + 10px);
-              right: calc(10% - 10px);
-          }
-          .footer a{
-              text-decoration: none;
-              margin-left: 10px;
-              color: gray;
-          }
-          .footer a img{
-              vertical-align: bottom;
-          }
-          .information button {
-            height: 40px;
-            width: 80px;
-            border: unset;
-            border-radius: 15px;
-            color: #212121;
-            z-index: 1;
-            background: #f8f8f4;
-            position: absolute;
-            font-size: 17px;
-            line-height: 40px;
-            -webkit-box-shadow: 4px 8px 19px -3px #f8f8f4;
-            box-shadow: 4px 8px 19px -3px #f8f8f4;
-            transition: all 250ms;
-            overflow: hidden;
-            top: calc(2%);
-            right: calc(10% - 10px);
+  font-family: "smile";
+  src: url("SmileySans-Oblique.ttf.woff2") format("woff2");
 }
 
-            .information button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0;
-            border-radius: 15px;
-            background-color: #212121;
-            z-index: -1;
-            -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-            box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-            transition: all 250ms
-            }
+* {
+  font-family: "smile";
+  padding: 0;
+  margin: 0;
+}
 
-            .information button:hover {
-            color: #f8f8f4;
-            }
+body {
+  display: flex;
+  /* background-image: url("background.jpggg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f4;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center center;
+}
 
-            .information button:hover::before {
-            width: 100%;
-            }
+#container {
+  position: absolute;
+  width: 200px;
+  height: 58px;
+  background-color: #fa7979;
+  z-index: 99;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  line-height: 58px;
+  user-select: none;
+  font-size: large;
+  box-shadow: 0px 0px 10px rgb(250, 121, 121);
+}
 
-            .information button:hover+#infors{
-                animation: ani 0.5s forwards;
-            }
+#shuffle-button {
+  position: absolute;
+  width: 125px;
+  height: 50px;
+  background-color: #7fffd4;
+  z-index: 99;
+  top: calc(50% + 75px);
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #7fffd4;
+}
+#shuffle-button:hover {
+  box-shadow: 0px 0px 20px #7fffd4;
+}
+#shuffle-button:active {
+  background: none;
+  color: #7fffd4;
+  border: 2px solid #7fffd4;
+}
 
-            #infors{
-                display: flex;
-                place-content: center;
-                place-items: center;
-                flex-wrap: wrap;
-                overflow: hidden;
-                visibility: hidden;
-                background-color: #f8f8f4;
-                width: 250px;
-                height: 60px;
-                position: absolute;
-                top: calc(10%);
-                right: 5vw;
-                font-size: small;
-                text-align:center;
-                line-height: 20px;
-                border-radius: 15px;
-            }
-            #infors p{
-                z-index: 1;
-            }
-            @keyframes ani {
-                0% {
-                  opacity: 0;
-                  visibility: hidden;
-                  transform: translateX(75px);
-                }
-                100% {
-                  opacity: 1;
-                  visibility: visible;
-                  transform: translateY(0);
-                }
-              }
-              #infors::before {
-                content: '';
-                position: absolute;
-                width: 250px;
-                background-image: linear-gradient(180deg, #7fffd4, rgb(250, 121, 121));
-                height: 130%;
-                animation: rotBGimg 3s linear infinite;
-                transition: all 0.1s linear;
-              }
-              
-              @keyframes rotBGimg {
-                from {
-                  transform: rotate(0deg);
-                }
-              
-                to {
-                  transform: rotate(360deg);
-                }
-              }
-              
-              #infors::after {
-                content: '';
-                position: absolute;
-                background: #f8f8f4;
-                inset: 5px;
-                border-radius: 15px;
-              }  
+.saying {
+  display: none;
+  position: absolute;
+  top: calc(50% + 150px);
+}
+
+.footer {
+  display: flex;
+  position: absolute;
+  top: calc(90% + 10px);
+  right: calc(10% - 10px);
+}
+.footer a {
+  text-decoration: none;
+  margin-left: 10px;
+  color: gray;
+}
+.footer a img {
+  vertical-align: bottom;
+}
+
+.information button {
+  height: 40px;
+  width: 80px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #f8f8f4;
+  position: absolute;
+  font-size: 17px;
+  line-height: 40px;
+  -webkit-box-shadow: 4px 8px 19px -3px #f8f8f4;
+  box-shadow: 4px 8px 19px -3px #f8f8f4;
+  transition: all 250ms;
+  overflow: hidden;
+  top: calc(2%);
+  right: calc(10% - 10px);
+}
+.information button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+.information button:hover {
+  color: #f8f8f4;
+}
+.information button:hover::before {
+  width: 100%;
+}
+.information button:hover + #infors {
+  animation: ani 0.5s forwards;
+}
+
+#infors {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  visibility: hidden;
+  background-color: #f8f8f4;
+  width: 250px;
+  height: 60px;
+  position: absolute;
+  top: calc(10%);
+  right: 5vw;
+  font-size: small;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 15px;
+}
+#infors p {
+  z-index: 1;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(75px);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+#infors::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  background-image: linear-gradient(180deg, #7fffd4, rgb(250, 121, 121));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.1s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#infors::after {
+  content: "";
+  position: absolute;
+  background: #f8f8f4;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.background-text {
+  position: fixed;
+  white-space: nowrap;
+}
